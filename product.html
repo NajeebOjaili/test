@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+    input{
+        outline: none;
+        width: 100%;
+        border: none;
+        background: #111;
+        margin: 4px;
+        color: #fff;
+        height: 30px;
+        border-radius: 4px;
+    }
+    input:focus{
+        background: #000;
+    }
+    #total{
+        padding: 4px 2px;
+        background-color: rgb(221, 21, 7);
+        display: flex;
+    }
+    #total::before{
+        content: 'Total:';
+
+    }
+
+    table{
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+</style>
+<body>
+<div class="container bg-dark text-light ">
+    <h1 class="text-center text-uppercase">crud</h1>
+    <P class=" text-center ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, numquam?</P>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <input type="text " placeholder="title" id="title" class="control-form w-100 mb-3" >
+            </div>
+            <div class="row  ">
+            <div class="col-12  d-flex gap-3  ">
+                <input type="number" onKeyup="getTotal()"  id="price" placeholder="price">
+                <input type="number" onKeyup="getTotal()"  id="taxes" placeholder="taxis">
+                <input type="number" onKeyup="getTotal()"  id="ads" placeholder="ads">
+                <input type="number" onKeyup="getTotal()"  id="discount" placeholder="discount">
+                <small id="total"  >325142</small>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <input type="number" placeholder="count" id="count" >
+                <input type="text" placeholder="category" id="category">
+                <button id="submit" class="btn btn-outline-primary my-2 rounded w-100"> Creat</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <input type="text" onkeyup="searchData(this.value)" placeholder="Search" id="search" class="mb-3">
+                <div class="col-12 d-flex gap-3">
+                    <button class="btn btn-outline-info my-2 rounded w-100 " onclick="getSearchMood(this.id)">Search By Title</button>
+                    <button class="btn btn-outline-info my-2 rounded w-100 " onclick="getSearchMood(this.id)">Search By category</button>
+                </div>
+                <div class="col-12" id="DeleteAll"></div>
+               
+            </div>
+        </div>
+
+<!-- <div class="table">
+    <thead>
+
+    
+        <tr >
+            <th scope="col">id</th>
+            <th scope="col">title</th>
+            <th scope="col">price</th>
+            <th scope="col">taxis</th>
+            <th scope="col">taxis</th>
+            <th scope="col">ads</th>
+            <th scope="col">discount</th>
+            <th scope="col">category</th>
+            <th scope="col">update</th>
+            <th scope="col">delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th class="row">
+                <td scope="col">1</td>
+                <td scope="col">Samsung</td>
+                <td scope="col">2000</td>
+                <td scope="col">100</td>
+                <td scope="col">100</td>
+                <td scope="col">100</td>
+                <td scope="col">2100</td>
+                <td scope="col">phon</td>
+                <td scope="col"><a href="#" class="btn btn-outline-info rounded">update</a></td>
+                <td scope="col"><a href="#" class="btn btn-outline-danger rounded">delete</a></td>
+            
+            </th>
+            
+        </tr>
+    </tbody>
+   
+</div>
+
+
+        </div> -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">title</th>
+                        <th scope="col">price</th>
+                        <th scope="col">taxis</th>
+                        <th scope="col">ads</th>
+                        <th scope="col">discount</th>
+                        <th scope="col">total</th>
+                        
+                        <th scope="col">category</th>
+                        <th scope="col">update</th>
+                        <th scope="col">delete</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tbody">
+                       
+                     
+                        
+                         
+                       
+                        </tbody>
+                      </table>
+                </div>
+               
+            </div>
+        </div>
+       
+    </div>
+
+</div>
+
+
+
+<script src="product.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+</body>
+</body>
+</html>
